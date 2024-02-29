@@ -1,6 +1,7 @@
 import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox-viem";
 import { mnemonic } from "./secrets.json"
+import "@nomicfoundation/hardhat-ethers";
+import "@nomicfoundation/hardhat-verify";
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -12,10 +13,33 @@ const config: HardhatUserConfig = {
       },
     }
   },
+  sourcify: {
+    enabled: true
+  },
+  etherscan: {
+    apiKey: {
+      blast: "D956K22P8AQBGWB5Y6B4V3RAIJFA8IHKD3", // apiKey is not required, just set a placeholder
+    },
+    customChains: [
+      {
+        network: "blast",
+        chainId: 81457,
+        urls: {
+          apiURL: "https://api.blastscan.io/api",
+          browserURL: "https://blastscan.io/"
+        }
+      }
+    ]
+  },
   defaultNetwork: "localhost",
   networks: {
+    blast: {
+      url: "https://blast.blockpi.network/v1/rpc/public",
+      accounts: ["63d43cc6462a70153a58e6cbeeeec356bdb0d1abada6c00bc49855fbcf530c02"],
+      
+    },
     ganache: {
-      url: "http://localhost:7545",
+      url: "http://localhost:8545",
       accounts: { mnemonic: mnemonic }
     },
     sepolia: {
@@ -24,7 +48,7 @@ const config: HardhatUserConfig = {
     },
     polygon: {
       url: "https://polygon-pokt.nodies.app",
-      accounts: ["c3bc28af05373d28f91c08312ecffd21e05aebf031193aeb62871c3d8365d1c8"]
+      accounts: ["c3bc28af05373d28f91c08312ecffd21e05aebf031193aeb62871c3d8365d1c8", "4b8ccba35b8aa8f1977abb6640e98acfce94c33b6d4d331c13855b05ebb9b05a"]
     }
   }
 };
