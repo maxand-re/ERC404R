@@ -3,7 +3,7 @@
 async function main() {
   const [owner] = await ethers.getSigners();
 
-  const contract = await ethers.deployContract("BlastAI", [owner.address]);
+  const contract = await ethers.deployContract("Dogen", []);
 
   await contract.waitForDeployment();
 

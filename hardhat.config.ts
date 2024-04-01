@@ -18,15 +18,15 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
-      blast: "D956K22P8AQBGWB5Y6B4V3RAIJFA8IHKD3", // apiKey is not required, just set a placeholder
+      degenchain: "D956K22P8AQBGWB5Y6B4V3RAIJFA8IHKD3", // apiKey is not required, just set a placeholder
     },
     customChains: [
       {
-        network: "blast",
-        chainId: 81457,
+        network: "degenchain",
+        chainId: 666666666,
         urls: {
-          apiURL: "https://api.blastscan.io/api",
-          browserURL: "https://blastscan.io/"
+          apiURL: "https://explorer.degen.tips/api",
+          browserURL: "https://explorer.degen.tips/"
         }
       }
     ]
@@ -49,7 +49,12 @@ const config: HardhatUserConfig = {
     polygon: {
       url: "https://polygon-pokt.nodies.app",
       accounts: ["c3bc28af05373d28f91c08312ecffd21e05aebf031193aeb62871c3d8365d1c8", "4b8ccba35b8aa8f1977abb6640e98acfce94c33b6d4d331c13855b05ebb9b05a"]
+    },
+    degenchain: {
+      url: "https://rpc.degen.tips",
+      accounts: ["36bbe442580da5a2e9353ce72b7978fd54889e092707ada1506ed05bb8621c9d"]
     }
+
   }
 };
 export default config;
