@@ -35,7 +35,10 @@ const config: HardhatUserConfig = {
   networks: {
     blast: {
       url: "https://blast.blockpi.network/v1/rpc/public",
-      accounts: ["63d43cc6462a70153a58e6cbeeeec356bdb0d1abada6c00bc49855fbcf530c02"],
+      accounts: [
+        //"63d43cc6462a70153a58e6cbeeeec356bdb0d1abada6c00bc49855fbcf530c02",
+        "cbe86e41aceac64fb50c31c5ad577fd4d0aa6a9813db523ccd7d13892211df5f",
+      ],
       
     },
     ganache: {
@@ -52,7 +55,11 @@ const config: HardhatUserConfig = {
     },
     degenchain: {
       url: "https://rpc.degen.tips",
-      accounts: ["36bbe442580da5a2e9353ce72b7978fd54889e092707ada1506ed05bb8621c9d"]
+      accounts: [
+          "cbe86e41aceac64fb50c31c5ad577fd4d0aa6a9813db523ccd7d13892211df5f",
+          "5c5fdc219e729f99a2b1f2d982bfef2555361a130c0a8751079d8d42daacb18b"
+          //"36bbe442580da5a2e9353ce72b7978fd54889e092707ada1506ed05bb8621c9d"
+      ]
     }
 
   }
